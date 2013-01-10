@@ -1,0 +1,103 @@
+<h2>Does Metro owe you compensation?</h2>
+  <p class="lead">Metro trains missed their performance targets in December. This means they owe many myki holders compensation, but to claim it they expect you to download <a href="http://metrotrains.com.au/webfm_send/140">this</a> form from their website, print it, fill it in by hand and post it to them. 
+    It is 2013, surely we can do better...</p>
+  <p class="lead">If you are <a href="http://metrotrains.com.au/performance/compensation">eligible for compensation</a>, you can use this page to generate a filled out claim form. You can then just print it and pop it in the post. Or email it to <a href="mailto:metroclaim@gmail.com">metroclaim@gmail.com</a> and I'll post them all in a batch.</p>
+  <div class="well">
+
+    <%= form_tag("/form/submit", :method => "post", :class=>"sigPad") do %>
+    <div class="row">
+      <div class="span2">
+        <%= label_tag(:month_of_claim, "Month of Claim") %>
+        <%= text_field_tag(:month_of_claim, "December 2012") %>
+      </div>
+    </div>    
+      <div class="row">
+        <div class="span2">
+          <%= label_tag(:first_name, "First Name") %>
+          <%= text_field_tag(:first_name) %>
+        </div>
+        <div class="span2 offset1">
+          <%= label_tag(:surname, "Surname") %>
+          <%= text_field_tag(:surname) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span2">
+          <%= label_tag(:street_address, "Street Address") %>
+          <%= text_field_tag(:street_address, )  %>
+        </div>
+        <div class="span2 offset1">
+           <%= label_tag(:suburb, "Suburb") %>
+           <%= text_field_tag(:suburb,"",:class=>"input-med") %>
+         </div>
+      </div>
+      <div class="row">
+        <div class="span2">
+          <%= label_tag(:state, "State") %>
+          <%= select_tag(:state, options_for_select(['VIC','TAS','NSW','SA','QLD','WA','NT','ACT']),:class=>"input-small") %>
+
+        </div>
+        <div class="span2 offset1">
+          <%= label_tag(:postcode, "Postcode") %>
+          <%= text_field_tag(:postcode,"",:class=>"input-small") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span2">
+          <%= label_tag :email %>
+          <%= email_field_tag :email %>
+        </div>
+        <div class="span2 offset1">
+           <%= label_tag(:mobile, "Mobile") %>
+           <%= text_field_tag(:mobile) %>
+         </div>
+      </div>
+      <div class="row">
+        <div class="span2">
+          <%= label_tag(:wk_phone, "Work Phone") %>
+          <%= text_field_tag(:wk_phone) %>
+        </div>
+        <div class="span2 offset1">
+          <%= label_tag(:hm_phone, "Home Phone") %>
+          <%= text_field_tag(:hm_phone) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span8">
+          <%= label_tag(:myki_num, "Myki Number") %>
+          <%= text_field_tag(:myki_num, "", :class=>"input-xxlarge", :maxlength=> 15)  %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span8">
+          <label class="checkbox inline">
+            <input type="checkbox" name="pass_type_364" value="true"> 28-364 day pass
+          </label>
+          <label class="checkbox inline">
+            <input type="checkbox" name="pass_type_365" value="365"> 365 day pass
+          </label>
+        </div>
+      </div>
+      ￼￼￼￼
+      <div class="row">
+        <div class="span4">
+          <p class="drawItDesc">Sign Here <span class="clearButton pull-right"><a href="#clear" class="btn btn-warning btn-mini">Clear</a></span></p>
+
+          <div class="sig sigWrapper">
+            <div class="typed"></div>
+            <canvas class="pad" width="370" height="55"></canvas>
+            <input type="hidden" name="output" class="output">
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="span6">
+            <%= submit_tag("GO!", :class=>"submit btn btn-block btn-success") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <footer>
+    <p><a href="/form/privacy">Privacy?</a></p>
+  </footer>
