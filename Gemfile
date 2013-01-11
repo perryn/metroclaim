@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 gem "prawn"
 gem "twitter-bootstrap-rails"
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.
